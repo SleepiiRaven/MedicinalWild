@@ -5,5 +5,5 @@
 </p>
 
 <p align="center">
-    <img alt="GitPoint" title="GitPoint" src="https://imgur.com/oeJNRkW" width="1920">
+    <a href="https://imgur.com/oeJNRkW"><img src="https://i.imgur.com/oeJNRkW.png" title="source: imgur.com" /></a>
 </p>
