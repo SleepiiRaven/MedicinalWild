@@ -5,6 +5,8 @@ using UnityEngine;
 
 // go into box collider once sprite is done, and make the collision shape good
 public class Player : MonoBehaviour {
+    
+
     // these are also variables i think
     private BoxCollider2D boxCollider;
 
@@ -25,6 +27,9 @@ public class Player : MonoBehaviour {
         // Reset moveDelta
         moveDelta = new Vector3(x,y,0);
 
+       
+
+
         // swap sprite direction, wether going right or left
         if (moveDelta.x > 0)
             transform.localScale = Vector3.one;
@@ -33,6 +38,7 @@ public class Player : MonoBehaviour {
 
         // make it move
         // make speed equal
+        
         transform.Translate(moveDelta * Time.deltaTime);
         
     }
