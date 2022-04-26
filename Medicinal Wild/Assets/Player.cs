@@ -7,11 +7,11 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     
 
-    // these are also variables i think
+    // these are variables i think
     private BoxCollider2D boxCollider;
     private Rigidbody2D rig;
 
-    // these are variables i think
+    // set up vector for the movement
     private Vector3 moveDelta;
 
     private SpriteRenderer spriteRenderer;
@@ -61,10 +61,12 @@ public class Player : MonoBehaviour {
 
     private void FixedUpdate()
     {   
+ 
         // moving the character using physics, so it can properly collide with objects
         rig.MovePosition(Vector2.MoveTowards(transform.position, transform.position + moveDelta*10, speed * Time.fixedDeltaTime));
         //                                    current position       target position                        speed
     }
+
 
     private IEnumerator UpdateSpeed()
     {
