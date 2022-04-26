@@ -5,5 +5,5 @@
 </p>
 
 <p align="center">
-
+    <img alt="GitPoint" title="GitPoint" src="https://imgur.com/oeJNRkW" width="1920">
 </p>
