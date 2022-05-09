@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://TitleScreen/logo.png" type="Texture" id=1]
+[ext_resource path="res://TitleScreen/Buttons/NewGameButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TitleScreen/Buttons/OptionsButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TitleScreen/Buttons/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fade In/FadeIn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://TitleScreen/8-bit Arcade In.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 30.0
+margin_top = 20.0
+margin_right = 290.0
+margin_bottom = 160.0
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 260.0
+margin_bottom = 50.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 54.0
+margin_right = 260.0
+margin_bottom = 124.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 128.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_right = 128.0
+custom_colors/font_color_focus = Color( 1, 0.972549, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.972549, 0, 1 )
+
+[node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 25.0
+margin_right = 128.0
+margin_bottom = 45.0
+custom_colors/font_color_focus = Color( 1, 0.972549, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.972549, 0, 1 )
+
+[node name="QuitButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 50.0
+margin_right = 128.0
+margin_bottom = 70.0
+custom_colors/font_color_focus = Color( 1, 0.972549, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.972549, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 128.0
+margin_right = 260.0
+margin_bottom = 153.0
+size_flags_vertical = 3
+custom_colors/font_color_shadow = Color( 0.156863, 0.396078, 0.176471, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 2 )
+text = "WHY DO THEY HAVE SWORDS who made
+this game question mark"
+
+[node name="FadeIn" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+
+[editable path="FadeIn"]
