@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree Branch.png-129e8e2c1021720bef7cc6129c6e5296.stex"
+path="res://.import/Oak Branch.png-92f9ccccbef65a6f2f123599b59918af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Tree Branch.png"
-dest_files=[ "res://.import/Tree Branch.png-129e8e2c1021720bef7cc6129c6e5296.stex" ]
+source_file="res://Items/Oak Branch.png"
+dest_files=[ "res://.import/Oak Branch.png-92f9ccccbef65a6f2f123599b59918af.stex" ]
 
 [params]
 

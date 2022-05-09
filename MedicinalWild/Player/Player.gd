@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 
 const PlayerHurtSound = preload("res://Music and Sounds/PlayerHurtSound.tscn")
-const Inventory = preload("res://UI/Inventory.tscn")
 
 #acceleration, makes it so you start out slow and speed up while you move
 export  var ACCELERATION = 500
@@ -96,8 +95,6 @@ func move_state(delta):
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
 		
-	if Input.is_action_just_pressed("inventory"):
-		state = INVENTORY
 #roll state
 func roll_state():
 	#make the velocity equal to the saved roll vector times the roll speed
