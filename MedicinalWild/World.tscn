@@ -888,6 +888,7 @@ position = Vector2( 93, -179 )
 position = Vector2( -44, -52 )
 
 [node name="Bats" type="YSort" parent="YSort"]
+visible = false
 
 [node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 41, 102 )
@@ -1005,9 +1006,9 @@ margin_top = 3.0
 margin_right = 63.0
 margin_bottom = 14.0
 
-[node name="FadeInRed" parent="CanvasLayer" instance=ExtResource( 10 )]
-
 [node name="InventoryContainer" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
+
+[node name="FadeInRed" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [editable path="CanvasLayer/FadeInRed"]
