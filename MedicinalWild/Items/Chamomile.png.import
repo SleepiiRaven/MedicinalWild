@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/default_inventory_background.png-49abdf0bed2dc40b8adb8fa0c2334d03.stex"
+path="res://.import/Chamomile.png-ac3d905595bead13572e444569e49bf5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/default_inventory_background.png"
-dest_files=[ "res://.import/default_inventory_background.png-49abdf0bed2dc40b8adb8fa0c2334d03.stex" ]
+source_file="res://Items/Chamomile.png"
+dest_files=[ "res://.import/Chamomile.png-ac3d905595bead13572e444569e49bf5.stex" ]
 
 [params]
 

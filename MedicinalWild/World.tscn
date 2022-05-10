@@ -888,7 +888,6 @@ position = Vector2( 93, -179 )
 position = Vector2( -44, -52 )
 
 [node name="Bats" type="YSort" parent="YSort"]
-visible = false
 
 [node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 41, 102 )
