@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 
-
 const PlayerHurtSound = preload("res://Music and Sounds/PlayerHurtSound.tscn")
+
 
 #acceleration, makes it so you start out slow and speed up while you move
 export  var ACCELERATION = 500
@@ -18,7 +18,13 @@ export var ROLL_SPEED = 120
 enum {
 	MOVE,
 	ROLL,
-	ATTACK
+	ATTACK,
+	PAUSE
+}
+
+enum {
+	MENU,
+	INVENTORY
 }
 
 #state
@@ -29,6 +35,8 @@ var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 #grab your stats
 var stats = PlayerStats
+#pause type
+var pause_type = null
 # $ is a shortcut to get a node that is a child of you
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -36,6 +44,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $HurtBox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+onready var InventoryContainer = get_parent().get_parent().get_node("CanvasLayer/InventoryContainer")
 
 
 func _ready():
@@ -58,7 +67,9 @@ func _physics_process(delta):
 			
 		ATTACK:
 			attack_state()
-		
+			
+		PAUSE:
+			pause_state()
 
 #move state, all the movement crap	
 func move_state(delta):
@@ -95,6 +106,13 @@ func move_state(delta):
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
 		
+	if Input.is_action_just_pressed("inventory"):
+		state = PAUSE
+		pause_type = INVENTORY
+		InventoryContainer.show()
+		
+		
+	
 #roll state
 func roll_state():
 	#make the velocity equal to the saved roll vector times the roll speed
@@ -111,7 +129,18 @@ func attack_state():
 	#find easiest path to the attack animation
 	animationState.travel("Attack")
 
-
+func pause_state():
+	velocity = Vector2.ZERO
+	animationState.travel("Idle")
+	if pause_type == INVENTORY:
+		if Input.is_action_just_pressed("inventory"):
+			InventoryContainer.hide()
+			state = MOVE
+	if Input.is_action_just_pressed("ui_cancel"):
+		if pause_type == INVENTORY:
+			InventoryContainer.hide()
+		state = MOVE
+	
 func move():
 	velocity = move_and_slide(velocity)
 

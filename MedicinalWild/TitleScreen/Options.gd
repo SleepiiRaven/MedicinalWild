@@ -6,7 +6,7 @@ onready var vsync_btn = $CenterContainer/VBoxContainer/Button2
 onready var brightness_btn = $CenterContainer/VBoxContainer/Button3
 onready var audio_menu_btn = $CenterContainer/VBoxContainer/Button4
 
-var fscreen = false
+var fscreen = true
 var vsync = false
 
 func _ready():
