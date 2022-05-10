@@ -72,14 +72,12 @@ size_flags_vertical = 3
 [node name="VersionLabel" type="Label" parent="Menu"]
 margin_top = 128.0
 margin_right = 260.0
-margin_bottom = 153.0
+margin_bottom = 140.0
 size_flags_vertical = 3
 custom_colors/font_color_shadow = Color( 0.156863, 0.396078, 0.176471, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
 custom_fonts/font = SubResource( 2 )
-text = "WHY DO THEY HAVE SWORDS who made
-this game question mark"
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
 visible = false
