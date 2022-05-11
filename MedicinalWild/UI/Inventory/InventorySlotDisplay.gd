@@ -11,7 +11,7 @@ onready var itemTextureRect = $ItemTextureRect
 	
 
 func display_item(item):
-	
+
 	if item is Item:
 		itemTextureRect.texture = item.texture
 	else:
@@ -48,4 +48,4 @@ func drop_data(_position, data):
 
 
 func _on_ItemTextureRect_mouse_entered():
-	pass
+	print(this_item)
