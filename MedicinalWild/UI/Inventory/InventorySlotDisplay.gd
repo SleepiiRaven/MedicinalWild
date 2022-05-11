@@ -1,13 +1,17 @@
 extends CenterContainer
 
+
+
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 var mouseInScreen = null
+var this_item = null
 
 onready var itemTextureRect = $ItemTextureRect
 
 	
 
 func display_item(item):
+	
 	if item is Item:
 		itemTextureRect.texture = item.texture
 	else:
@@ -38,3 +42,10 @@ func drop_data(_position, data):
 	var _my_item = inventory.items[my_item_index]
 	inventory.swap_items(my_item_index, data.item_index)
 	inventory.set_item(my_item_index, data.item)
+
+
+
+
+
+func _on_ItemTextureRect_mouse_entered():
+	pass

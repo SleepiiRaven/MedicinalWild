@@ -1,7 +1,7 @@
 extends GridContainer
 
 var inventory = preload("res://UI/Inventory/Inventory.tres")
-
+var item = preload("res://UI/Inventory/InventorySlotDisplay.gd")
 func _ready():
 	inventory.connect("items_changed", self, "_on_items_changed")
 	update_inventory_display()
