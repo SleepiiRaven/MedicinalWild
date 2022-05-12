@@ -1,7 +1,9 @@
 <h1 align="center">Medicinal Wild</h1> <br>
 
 <h2 align="center">
-  Medicinal Wild is a world of plants, magic, and so much more! There's so much beauty held in this world. You can create a house, and then from there a cauldron. In this cauldron you can create many kinds of infusions, such as Teas, Syrups, and Rubs to keep yourself warm, happy, and healthy. There are a couple of "meters" to simulate realism. These meters include: Health, Hunger, Water, Sanity, and Temperature, and there are a couple of status effects that you can get such as: Tired, Angry, Sad, Anxious, and Sick that degrade your sanity/health. You can cure these effects by using herbs. Chamomile can be soothing, can make you Tired (tired can be cured by going to bed) Ginger can cure Tired, and Sick. All teas made using the Cauldron with the heat on can bring up your temperature and water. This game has a lot to learn, but once you learn it, the world is yours.
+  In the year 1643, Lily was outcast from her village for being suspected to be a witch. She escaped capture and now she must survive out in the woods, with nothing to help her.
+
+  Medicinal Wild is an cozy, environmental survival game about being a forager in the woods, collecting plants and brewing teas, and building a house for yourself. There are many realistic challenges that you will face, so there is no need for enemies, but you may turn the game to "Nightmare Mode" to add some frightening enemies.
 </h2>
 
 <h1 align="center">Concept Art</h1> <br>
