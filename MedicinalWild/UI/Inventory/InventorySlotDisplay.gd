@@ -1,10 +1,8 @@
 extends CenterContainer
 
 
-
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 var mouseInScreen = null
-var this_item = null
 
 onready var itemTextureRect = $ItemTextureRect
 
@@ -44,8 +42,3 @@ func drop_data(_position, data):
 	inventory.set_item(my_item_index, data.item)
 
 
-
-
-
-func _on_ItemTextureRect_mouse_entered():
-	print(this_item)

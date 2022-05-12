@@ -104,7 +104,6 @@ config/windows_native_icon="res://icon.ico"
 PlayerStats="*res://Player/PlayerStats.tscn"
 Settings="*res://Settings.gd"
 Music="*res://Music.tscn"
-MusicPlayer="*res://Music.tscn"
 
 [display]
 

@@ -17,3 +17,5 @@ func _on_FadeIn_fade_finished():
 # warning-ignore:return_value_discarded
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(scene_path_to_load)
+	if scene_path_to_load == "res://World.tscn":
+		Music.change_music()

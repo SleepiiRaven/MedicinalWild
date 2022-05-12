@@ -16,5 +16,3 @@ margin_right = 169.0
 margin_bottom = 99.0
 rect_min_size = Vector2( 18, 18 )
 stretch_mode = 4
-
-[connection signal="mouse_entered" from="ItemTextureRect" to="." method="_on_ItemTextureRect_mouse_entered"]

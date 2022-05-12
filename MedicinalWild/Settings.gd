@@ -6,7 +6,6 @@ var game_data = {}
 
 func _ready():
 	load_data()
-	OS.window_fullscreen = true
 	
 func load_data():
 	var file = File.new()

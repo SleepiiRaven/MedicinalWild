@@ -7,6 +7,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	Music.connect("fade_started", self, "start_red_fade")
 	
+	
 
 		
 
