@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource( 1 )
-name = ""
+name = "Shiitake Mushroom"
 texture = ExtResource( 2 )

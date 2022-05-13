@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "IronSword"
+name = "Iron Sword"
 texture = ExtResource( 2 )

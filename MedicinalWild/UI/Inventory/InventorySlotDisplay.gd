@@ -3,10 +3,14 @@ extends CenterContainer
 
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 var mouseInScreen = null
+var isItem = false
+var thisItem = ""
+var thisItemName = ""
 
 onready var itemTextureRect = $ItemTextureRect
 
-	
+func _process(_delta):
+	check_tooltip()
 
 func display_item(item):
 
@@ -41,4 +45,12 @@ func drop_data(_position, data):
 	inventory.swap_items(my_item_index, data.item_index)
 	inventory.set_item(my_item_index, data.item)
 
+func check_tooltip():
+	var item_index = get_index()
+	if inventory.items[item_index] != null:
+		isItem = true
+		thisItem = inventory.items[item_index]
+		thisItemName = thisItem.name
 
+func _on_ItemTextureRect_mouse_entered():
+	print(thisItemName)
