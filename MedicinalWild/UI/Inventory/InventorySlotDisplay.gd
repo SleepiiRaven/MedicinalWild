@@ -47,8 +47,12 @@ func drop_data(_position, data):
 	var my_item_index = get_index()
 	var my_item = inventory.items[my_item_index]
 	if my_item is Item and my_item.name == data.item.name:
-		my_item.amount += data.item.amount
-		inventory.emit_signal("items_changed", [my_item_index])
+		if my_item.amount + data.item.amount <= 99:
+			my_item.amount += data.item.amount
+			inventory.emit_signal("items_changed", [my_item_index])
+		else:
+			if inventory.drag_data is Dictionary:
+				inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
 	else:
 		inventory.swap_items(my_item_index, data.item_index)
 		inventory.set_item(my_item_index, data.item)
