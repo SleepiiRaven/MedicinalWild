@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
-[ext_resource path="res://Items/Shiitake Mushroom.png" type="Texture" id=2]
+[ext_resource path="res://Items/Apple.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-name = "Shiitake Mushroom"
+name = "Apple"
 texture = ExtResource( 2 )
-description = "Looks yummy!"
+description = "An apple harvested from a tree, just when ripe"

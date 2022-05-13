@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Apple.png-dd789f4b8f36e514e44925c5603158a8.stex"
+path="res://.import/Essential Oil.png-bd186ed04222b21256d18d060d855ad8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Apple.png"
-dest_files=[ "res://.import/Apple.png-dd789f4b8f36e514e44925c5603158a8.stex" ]
+source_file="res://Items/Essential Oil.png"
+dest_files=[ "res://.import/Essential Oil.png-bd186ed04222b21256d18d060d855ad8.stex" ]
 
 [params]
 

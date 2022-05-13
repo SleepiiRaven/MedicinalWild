@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Poison Mushroom"
 texture = ExtResource( 2 )
+description = "Maybe I shouldn't eat this..."

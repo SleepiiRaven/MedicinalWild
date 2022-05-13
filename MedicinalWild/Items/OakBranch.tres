@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Oak Branch"
 texture = ExtResource( 2 )
+description = "It still has a live leaf..."

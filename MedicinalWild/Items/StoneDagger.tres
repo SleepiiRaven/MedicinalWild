@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Stone Dagger"
 texture = ExtResource( 2 )
+description = "Stabby wand!"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Apple.png-dd789f4b8f36e514e44925c5603158a8.stex"
+path="res://.import/Mustard Plant.png-e06f9ba6e821395381e13fea9be5eee0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Apple.png"
-dest_files=[ "res://.import/Apple.png-dd789f4b8f36e514e44925c5603158a8.stex" ]
+source_file="res://Items/Mustard Plant.png"
+dest_files=[ "res://.import/Mustard Plant.png-e06f9ba6e821395381e13fea9be5eee0.stex" ]
 
 [params]
 

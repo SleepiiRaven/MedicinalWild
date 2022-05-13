@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Green Tea"
 texture = ExtResource( 2 )
+description = "Caffinated. Don't give to kids"

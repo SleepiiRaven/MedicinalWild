@@ -1,19 +1,19 @@
 extends GridContainer
 
-var inventory = preload("res://UI/Inventory/Inventory.tres")
+var hotbar = preload("res://UI/HotBar/Hotbar.tres")
 
 func _ready():
-	inventory.connect("items_changed", self, "_on_items_changed")
-	inventory.make_items_unique()
+	hotbar.connect("items_changed", self, "_on_items_changed")
+	hotbar.make_items_unique()
 	update_inventory_display()
 
 func update_inventory_display():
-	for item_index in inventory.items.size():
+	for item_index in hotbar.items.size():
 		update_inventory_slot_display(item_index)
 
 func update_inventory_slot_display(item_index):
 	var inventorySlotDisplay = get_child(item_index)
-	var item = inventory.items[item_index]
+	var item = hotbar.items[item_index]
 	inventorySlotDisplay.display_item(item)
 
 
@@ -24,5 +24,5 @@ func _on_items_changed(indexes):
 
 func _unhandled_input(event):
 	if event.is_action_released("ui_left_mouse"):
-		if inventory.drag_data is Dictionary:
-			inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
+		if hotbar.drag_data is Dictionary:
+			hotbar.set_item(hotbar.drag_data.item_index, hotbar.drag_data.item)

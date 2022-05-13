@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Chamomile"
 texture = ExtResource( 2 )
+description = "This herb can help calm my nerves"

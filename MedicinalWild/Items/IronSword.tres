@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 name = "Iron Sword"
 texture = ExtResource( 2 )
+description = "It's sharp. Dunno why I'd need it though."
