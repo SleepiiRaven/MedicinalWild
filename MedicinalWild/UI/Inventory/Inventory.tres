@@ -5,4 +5,4 @@
 
 [resource]
 script = ExtResource( 1 )
-items = [ null, null, null, ExtResource( 8 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+items = [ null, null, null, ExtResource( 8 ), null, null, null, ExtResource( 8 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
