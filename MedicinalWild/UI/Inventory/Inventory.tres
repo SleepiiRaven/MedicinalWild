@@ -1,8 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://UI/Inventory/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Items/ShiitakeMushroom.tres" type="Resource" id=2]
+[ext_resource path="res://Items/PoisonMushroom.tres" type="Resource" id=3]
+[ext_resource path="res://Items/MustardPlant.tres" type="Resource" id=4]
+[ext_resource path="res://Items/OakBranch.tres" type="Resource" id=5]
+[ext_resource path="res://Items/WoodenSword.tres" type="Resource" id=6]
+[ext_resource path="res://Items/GreenTea.tres" type="Resource" id=7]
 [ext_resource path="res://Items/IronSword.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 1 )
-items = [ null, null, null, ExtResource( 8 ), null, ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+items = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 2 ), null, null, null, null, null, ExtResource( 6 ), null, null, null, ExtResource( 7 ), null, null, null, null, null ]

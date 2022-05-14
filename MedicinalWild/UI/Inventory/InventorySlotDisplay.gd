@@ -1,11 +1,12 @@
 extends CenterContainer
 
-
+var tooltip = preload("res://UI/ToolTip/ToolTip.tscn")
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 var mouseInScreen = null
 var isItem = false
 var thisItem = ""
 var thisItemName = ""
+var tooltipExists = false
 
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
@@ -22,9 +23,12 @@ func display_item(item):
 	else:
 		itemTextureRect.texture = load("res://UI/Inventory/EmptyInventorySlot.png")
 		itemAmountLabel.text = ""
+	
 
 
 func get_drag_data(_position):
+
+
 	var item_index = get_index()
 	var item = inventory.remove_item(item_index)
 	if item is Item:
@@ -39,6 +43,8 @@ func get_drag_data(_position):
 		set_drag_preview(c)
 		inventory.drag_data = data
 		return data
+		
+		
 	
 func can_drop_data(_position, data):
 	return data is Dictionary and data.has("item")
@@ -54,8 +60,11 @@ func drop_data(_position, data):
 			if inventory.drag_data is Dictionary:
 				inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
 	else:
+		
 		inventory.swap_items(my_item_index, data.item_index)
 		inventory.set_item(my_item_index, data.item)
+
+		
 		
 	inventory.drag_data = null
 
@@ -67,5 +76,25 @@ func check_tooltip():
 		thisItemName = thisItem.name
 
 func _on_ItemTextureRect_mouse_entered():
-	#PUT TOOLTIP INFO HERE
-	pass
+	var item_index = get_index()
+	var tooltip_instance = tooltip.instance()
+	
+	tooltip_instance.rect_global_position = itemTextureRect.rect_global_position + Vector2(15, 15)
+	add_child(tooltip_instance)
+	
+	if inventory.items[item_index] != null:
+
+		var title = tooltip_instance.get_node("Background/MarginContainer/VBoxContainer/Label")
+		var description = tooltip_instance.get_node("Background/MarginContainer/VBoxContainer/Label2")
+		title.text = str(thisItemName)
+		description.text = str(thisItem.description)
+		yield(get_tree().create_timer(.35), "timeout")
+		if has_node("ToolTip"):
+			tooltip_instance.show()
+
+func _on_ItemTextureRect_mouse_exited():
+	yield(get_tree().create_timer(.35), "timeout")
+	if has_node("ToolTip"):
+		get_node("ToolTip").free()
+		
+		
