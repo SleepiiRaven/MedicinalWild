@@ -45,14 +45,15 @@ onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $HurtBox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var InventoryContainer = get_parent().get_parent().get_node("CanvasLayer/InventoryContainer")
-
+onready var inventory_items_array = preload("res://UI/Inventory/Inventory.tres")
 
 func _ready():
 	#connect to function
 	stats.connect("no_health", self, "die")
 	animationTree.active = true;
 	swordHitbox.knockback_vector = roll_vector
-	
+	global_position = Settings.game_data.get("position")
+	stats.health = Settings.game_data.get("current_health")
 
 #Runs every tick, delta scales for low fps people
 func _physics_process(delta):
@@ -117,6 +118,13 @@ func move_state(delta):
 			pickup_item.pick_up_item(self)
 			$PickupZone.items_in_range.erase(pickup_item)
 		
+	if Input.is_action_just_pressed("ui_cancel"):
+		Settings.game_data = {
+			"items": inventory_items_array,
+			"position": position,
+			"current_health": stats.health
+		}
+		Settings.save_data()
 		
 	
 #roll state
@@ -159,7 +167,7 @@ func attack_animation_finished():
 
 
 func _on_HurtBox_area_entered(area):
-	stats.health -= area.damage;
+	stats.health -= area.damage
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()

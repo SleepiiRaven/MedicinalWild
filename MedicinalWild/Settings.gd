@@ -1,8 +1,11 @@
 extends Node
 
-const SAVEFILE = "user://SAVEFILE.save"
+const SAVEFILE = "user://SAVEFILE.txt"
 
+var options_data = {}
 var game_data = {}
+
+
 
 func _ready():
 	load_data()
@@ -10,7 +13,7 @@ func _ready():
 func load_data():
 	var file = File.new()
 	if not file.file_exists(SAVEFILE):
-		game_data = {
+		options_data = {
 			"fullscreen_on": false,
 			"vsync_on": false,
 			"brightness": 1,
@@ -18,13 +21,22 @@ func load_data():
 			"music_vol": -10,
 			"sfx_vol": -10,
 		}
+		game_data = {
+			"items": [],
+			"position": Vector2(121, 54),
+			#upgrades?,
+			"current_hp": 5
+		}
 		save_data()
 	file.open(SAVEFILE, File.READ)
 	game_data = file.get_var()
+	options_data = file.get_var()
+
 	file.close()
 
 func save_data():
 	var file = File.new()
 	file.open(SAVEFILE, File.WRITE)
 	file.store_var(game_data)
+	file.store_var(options_data)
 	file.close()
