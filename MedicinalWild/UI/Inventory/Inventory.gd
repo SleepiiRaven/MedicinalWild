@@ -5,12 +5,7 @@ var drag_data = null
 
 signal items_changed(indexes)
 
-export(Array, Resource) var items = [
-	null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
-]
-
-func ready():
-	items = Settings.game_data.get("items")
+export(Array, Resource) var items = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 
 func set_item(item_index, item):
 	var previousItem = items[item_index]

@@ -52,8 +52,9 @@ func _ready():
 	stats.connect("no_health", self, "die")
 	animationTree.active = true;
 	swordHitbox.knockback_vector = roll_vector
-	global_position = Settings.game_data.get("position")
-	stats.health = Settings.game_data.get("current_health")
+	#global_position = Settings.game_data.get("position")
+	#stats.health = Settings.game_data.get("current_hp")
+	print(stats.health)
 
 #Runs every tick, delta scales for low fps people
 func _physics_process(delta):
@@ -120,10 +121,34 @@ func move_state(delta):
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		Settings.game_data = {
-			"items": inventory_items_array,
+			"item0": inventory_items_array.items[0],
+			"item1": inventory_items_array.items[1],
+			"item2": inventory_items_array.items[2],
+			"item3": inventory_items_array.items[3],
+			"item4": inventory_items_array.items[4],
+			"item5": inventory_items_array.items[5],
+			"item6": inventory_items_array.items[6],
+			"item7": inventory_items_array.items[7],
+			"item8": inventory_items_array.items[8],
+			"item9": inventory_items_array.items[9],
+			"item10": inventory_items_array.items[10],
+			"item11": inventory_items_array.items[11],
+			"item12": inventory_items_array.items[12],
+			"item13": inventory_items_array.items[13],
+			"item14": inventory_items_array.items[14],
+			"item15": inventory_items_array.items[15],
+			"item16": inventory_items_array.items[16],
+			"item17": inventory_items_array.items[17],
+			"item18": inventory_items_array.items[18],
+			"item19": inventory_items_array.items[19],
+			"item20": inventory_items_array.items[20],
+			"item21": inventory_items_array.items[21],
+			"item22": inventory_items_array.items[22],
+			"item23": inventory_items_array.items[23],
 			"position": position,
-			"current_health": stats.health
+			"current_hp": stats.health
 		}
+		print(Settings.game_data)
 		Settings.save_data()
 		
 	

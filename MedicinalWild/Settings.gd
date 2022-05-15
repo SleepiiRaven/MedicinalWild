@@ -22,7 +22,30 @@ func load_data():
 			"sfx_vol": -10,
 		}
 		game_data = {
-			"items": [],
+			"item0": null,
+			"item1": null, 
+			"item2": null, 
+			"item3": null,
+			"item4": null, 
+			"item5": null, 
+			"item6": null, 
+			"item7": null, 
+			"item8": null, 
+			"item9": null, 
+			"item10": null, 
+			"item11": null, 
+			"item12": null, 
+			"item13": null, 
+			"item14": null, 
+			"item15": null, 
+			"item16": null, 
+			"item17": null, 
+			"item18": null, 
+			"item19": null, 
+			"item20": null, 
+			"item21": null, 
+			"item22": null, 
+			"item23": null,
 			"position": Vector2(121, 54),
 			#upgrades?,
 			"current_hp": 5
@@ -40,3 +63,4 @@ func save_data():
 	file.store_var(game_data)
 	file.store_var(options_data)
 	file.close()
+	print("Saved!")
