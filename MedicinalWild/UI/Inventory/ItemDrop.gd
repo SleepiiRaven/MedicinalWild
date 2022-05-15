@@ -5,7 +5,7 @@ onready var inventory = preload("res://UI/Inventory/InventoryDisplay.tscn")
 const ACCELERATION = 460
 const MAX_SPEED = 225
 var velocity = Vector2.ZERO
-export var item = "res://Items/Apple.tres"
+onready var item = preload("res://Items/Apple.tres")
 
 var player = null
 var being_picked_up = false
