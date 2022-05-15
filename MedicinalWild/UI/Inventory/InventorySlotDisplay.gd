@@ -1,5 +1,6 @@
 extends CenterContainer
 
+
 var tooltip = preload("res://UI/ToolTip/ToolTip.tscn")
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 var mouseInScreen = null
@@ -7,12 +8,19 @@ var isItem = false
 var thisItem = ""
 var thisItemName = ""
 var tooltipExists = false
+var tooltipPos = Vector2.ZERO
 
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
 
+
+
 func _process(_delta):
 	check_tooltip()
+	tooltip_follow_mouse()
+	if tooltipExists:
+		get_node("ToolTip").rect_global_position = tooltipPos
+
 
 func display_item(item):
 
@@ -78,23 +86,30 @@ func check_tooltip():
 func _on_ItemTextureRect_mouse_entered():
 	var item_index = get_index()
 	var tooltip_instance = tooltip.instance()
-	
-	tooltip_instance.rect_global_position = itemTextureRect.rect_global_position + Vector2(15, 15)
+	tooltipExists = true
+	tooltip_instance.rect_global_position = tooltipPos
 	add_child(tooltip_instance)
 	
 	if inventory.items[item_index] != null:
-
+		
 		var title = tooltip_instance.get_node("Background/MarginContainer/VBoxContainer/Label")
 		var description = tooltip_instance.get_node("Background/MarginContainer/VBoxContainer/Label2")
 		title.text = str(thisItemName)
 		description.text = str(thisItem.description)
-		yield(get_tree().create_timer(.35), "timeout")
+		yield(get_tree().create_timer(.05), "timeout")
 		if has_node("ToolTip"):
 			tooltip_instance.show()
+			
 
 func _on_ItemTextureRect_mouse_exited():
-	yield(get_tree().create_timer(.35), "timeout")
+	yield(get_tree().create_timer(.05), "timeout")
+	tooltipExists = false
 	if has_node("ToolTip"):
 		get_node("ToolTip").free()
+	
+		
+func tooltip_follow_mouse():
+	
+		tooltipPos = get_global_mouse_position()
 		
 		

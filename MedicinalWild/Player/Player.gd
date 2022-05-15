@@ -111,6 +111,12 @@ func move_state(delta):
 		pause_type = INVENTORY
 		InventoryContainer.show()
 		
+	if Input.is_action_just_pressed("interact"):
+		if $PickupZone.items_in_range.size() > 0:
+			var pickup_item = $PickupZone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			$PickupZone.items_in_range.erase(pickup_item)
+		
 		
 	
 #roll state

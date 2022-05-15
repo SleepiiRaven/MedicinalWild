@@ -7,4 +7,4 @@
 script = ExtResource( 1 )
 name = "Wooden Sword"
 texture = ExtResource( 2 )
-description = "It feels like that "
+description = "Looks very flimsy... but it's usable"

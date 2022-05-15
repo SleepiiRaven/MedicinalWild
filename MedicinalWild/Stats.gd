@@ -8,11 +8,9 @@ signal health_changed(value)
 signal max_health_changed(value)
 
 func toggle_fullscreen(value):
-	print("henlo")
 	OS.window_fullscreen = value
 	
 func toggle_vsync(value):
-	print("henlo")
 	OS.vsync_enabled = value
 	
 func update_master_volume(vol):

@@ -65,11 +65,6 @@ _global_script_classes=[ {
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
 "base": "Resource",
-"class": "Hotbar",
-"language": "GDScript",
-"path": "res://UI/HotBar/Hotbar.gd"
-}, {
-"base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://UI/Inventory/Inventory.gd"
@@ -91,7 +86,6 @@ _global_script_class_icons={
 "DialogicResources": "",
 "DialogicUtil": "",
 "HistoryRow": "",
-"Hotbar": "",
 "Inventory": "",
 "Item": ""
 }
@@ -254,6 +248,7 @@ ui_left_mouse={
 2d_physics/layer_4="EnemyHurtbox"
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="SoftCollisions"
+2d_physics/layer_7="ItemDrop"
 
 [physics]
 

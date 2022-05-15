@@ -28,6 +28,15 @@ func remove_item(item_index):
 	emit_signal("items_changed", [item_index])
 	return previousItem
 
+func pickup_item(item):
+	var item_index = 0
+	if items[item_index] == null:
+		swap_items(item_index, item)
+	else:
+		item_index += 1
+		pickup_item(item)
+		
+
 func make_items_unique():
 	var unique_items = []
 	for item in items:
