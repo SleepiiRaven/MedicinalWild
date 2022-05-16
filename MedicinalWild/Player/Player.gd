@@ -45,6 +45,7 @@ onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $HurtBox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var InventoryContainer = get_parent().get_parent().get_node("CanvasLayer/InventoryContainer")
+onready var canvasModulate = get_parent().get_parent().get_node("CanvasModulate")
 onready var inventory = preload("res://UI/Inventory/Inventory.tres")
 onready var inventory_items_array = preload("res://UI/Inventory/Inventory.tres").items
 
@@ -58,7 +59,12 @@ func _ready():
 
 #Runs every tick, delta scales for low fps people
 func _physics_process(delta):
-	
+	if canvasModulate.realtime == "Day":
+		$Light2D.energy = 0
+		$Light2D2.energy = 0
+	else:
+		$Light2D.energy = .5
+		$Light2D2.energy = .5
 	#its kinda like switch in gamemaker, you can just use if, elif, elif
 	match state:
 		MOVE:
