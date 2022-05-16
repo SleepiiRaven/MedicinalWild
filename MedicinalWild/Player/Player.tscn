@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Music and Sounds/Evade.wav" type="AudioStream" id=8]
 [ext_resource path="res://WhiteColor.shader" type="Shader" id=9]
 [ext_resource path="res://Player/PickupZone.gd" type="Script" id=10]
+[ext_resource path="res://Light.png" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=56]
 shader = ExtResource( 9 )
@@ -843,6 +844,11 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=58]
 radius = 70.0071
 
+[sub_resource type="Environment" id=59]
+glow_enabled = true
+glow_blend_mode = 0
+glow_hdr_threshold = 0.43
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -928,6 +934,30 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
 shape = SubResource( 58 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, 0.999994 )
+scale = Vector2( 0.152568, 0.162834 )
+texture = ExtResource( 11 )
+texture_scale = 4.35
+energy = 0.5
+shadow_enabled = true
+shadow_gradient_length = 3.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 0, 0.999994 )
+scale = Vector2( 0.152568, 0.162834 )
+texture = ExtResource( 11 )
+texture_scale = 4.35
+energy = 0.5
+shadow_gradient_length = 3.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 59 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="invincibility_ended" from="HurtBox" to="." method="_on_HurtBox_invincibility_ended"]
