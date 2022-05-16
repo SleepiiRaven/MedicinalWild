@@ -2,7 +2,7 @@ extends Node2D
 
 signal fade_started
 
-#music is annoying to do :( AAAAAAAAAAAAAAA
+#music is annoying to do :( AAAAAAAAAAAAAAA this is dumb
 
 #TRANSITION FOR MUSIC
 export var TRANSITION_DURATION = 4.0
