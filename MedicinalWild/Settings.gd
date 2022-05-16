@@ -5,8 +5,6 @@ const SAVEFILE = "user://SAVEFILE.txt"
 var options_data = {}
 var game_data = {}
 
-
-
 func _ready():
 	load_data()
 	
@@ -54,13 +52,12 @@ func load_data():
 	file.open(SAVEFILE, File.READ)
 	game_data = file.get_var()
 	options_data = file.get_var()
-
 	file.close()
-
+	
+	
 func save_data():
 	var file = File.new()
 	file.open(SAVEFILE, File.WRITE)
 	file.store_var(game_data)
 	file.store_var(options_data)
 	file.close()
-	print("Saved!")

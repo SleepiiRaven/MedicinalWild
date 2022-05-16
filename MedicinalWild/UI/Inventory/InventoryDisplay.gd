@@ -1,39 +1,174 @@
 extends GridContainer
 
+var ApplePie = preload("res://Items/Apple Pie.tres")
+var Apple = preload("res://Items/Apple.tres")
+var Carrot = preload("res://Items/Carrot.tres")
+var Chamomile = preload("res://Items/Chamomile.tres")
+var EssentialOil = preload("res://Items/EssentialOil.tres")
+var GreenTea = preload("res://Items/GreenTea.tres")
+var IronSword = preload("res://Items/IronSword.tres")
+var MustardPlant = preload("res://Items/MustardPlant.tres")
+var OakBranch = preload("res://Items/OakBranch.tres")
+var PoisonMushroom = preload("res://Items/PoisonMushroom.tres")
+var ShiitakeMushroom = preload("res://Items/ShiitakeMushroom.tres")
+var StoneDagger = preload("res://Items/StoneDagger.tres")
+var WoodenSword = preload("res://Items/WoodenSword.tres")
 
 var inventory = preload("res://UI/Inventory/Inventory.tres")
 
 func _ready():
-	inventory.set_item(0, Settings.game_data.get("item0"))
-	inventory.set_item(1, Settings.game_data.get("item1"))
-	inventory.set_item(2, Settings.game_data.get("item2"))
-	inventory.set_item(3, Settings.game_data.get("item3"))
-	inventory.set_item(4, Settings.game_data.get("item4"))
-	inventory.set_item(5, Settings.game_data.get("item5"))
-	inventory.set_item(6, Settings.game_data.get("item6"))
-	inventory.set_item(7, Settings.game_data.get("item7"))
-	inventory.set_item(8, Settings.game_data.get("item8"))
-	inventory.set_item(9, Settings.game_data.get("item9"))
-	inventory.set_item(10, Settings.game_data.get("item10"))
-	inventory.set_item(11, Settings.game_data.get("item11"))
-	inventory.set_item(12, Settings.game_data.get("item12"))
-	inventory.set_item(13, Settings.game_data.get("item13"))
-	inventory.set_item(14, Settings.game_data.get("item14"))
-	inventory.set_item(15, Settings.game_data.get("item15"))
-	inventory.set_item(16, Settings.game_data.get("item16"))
-	inventory.set_item(17, Settings.game_data.get("item17"))
-	inventory.set_item(18, Settings.game_data.get("item18"))
-	inventory.set_item(19, Settings.game_data.get("item19"))
-	inventory.set_item(20, Settings.game_data.get("item20"))
-	inventory.set_item(21, Settings.game_data.get("item21"))
-	inventory.set_item(22, Settings.game_data.get("item22"))
-	inventory.set_item(23, Settings.game_data.get("item23"))
+	if Settings.game_data.get("item0") != null:
+		var item = Settings.game_data.get("item0")
+		load_inventory(item, 0)
+	else:
+		inventory.items[0] = null
+	if Settings.game_data.get("item1") != null:
+		var item = Settings.game_data.get("item1")
+		load_inventory(item, 1)
+	else:
+		inventory.items[1] = null
+	if Settings.game_data.get("item2") != null:
+		var item = Settings.game_data.get("item2")
+		load_inventory(item, 2)
+	else:
+		inventory.items[2] = null
+	if Settings.game_data.get("item3") != null:
+		var item = Settings.game_data.get("item3")
+		load_inventory(item, 3)
+	else:
+		inventory.items[3] = null
+	if Settings.game_data.get("item4") != null:
+		var item = Settings.game_data.get("item4")
+		load_inventory(item, 4)
+	else:
+		inventory.items[4] = null
+	if Settings.game_data.get("item5") != null:
+		var item = Settings.game_data.get("item5")
+		load_inventory(item, 5)
+	else:
+		inventory.items[5] = null
+	if Settings.game_data.get("item6") != null:
+		var item = Settings.game_data.get("item6")
+		load_inventory(item, 6)
+	else:
+		inventory.items[6] = null
+	if Settings.game_data.get("item7") != null:
+		var item = Settings.game_data.get("item7")
+		load_inventory(item, 7)
+	else:
+		inventory.items[7] = null
+	if Settings.game_data.get("item8") != null:
+		var item = Settings.game_data.get("item8")
+		load_inventory(item, 8)
+	else:
+		inventory.items[8] = null
+	if Settings.game_data.get("item9") != null:
+		var item = Settings.game_data.get("item9")
+		load_inventory(item, 9)
+	else:
+		inventory.items[9] = null
+	if Settings.game_data.get("item10") != null:
+		var item = Settings.game_data.get("item10")
+		load_inventory(item, 10)
+	else:
+		inventory.items[10] = null
+	if Settings.game_data.get("item11") != null:
+		var item = Settings.game_data.get("item11")
+		load_inventory(item, 11)
+	else:
+		inventory.items[11] = null
+	if Settings.game_data.get("item12") != null:
+		var item = Settings.game_data.get("item12")
+		load_inventory(item, 12)
+	else:
+		inventory.items[12] = null
+	if Settings.game_data.get("item13") != null:
+		var item = Settings.game_data.get("item13")
+		load_inventory(item, 13)
+	else:
+		inventory.items[13] = null
+	if Settings.game_data.get("item14") != null:
+		var item = Settings.game_data.get("item14")
+		load_inventory(item, 14)
+	else:
+		inventory.items[14] = null
+	if Settings.game_data.get("item15") != null:
+		var item = Settings.game_data.get("item15")
+		load_inventory(item, 15)
+	else:
+		inventory.items[15] = null
+	if Settings.game_data.get("item16") != null:
+		var item = Settings.game_data.get("item16")
+		load_inventory(item, 16)
+	else:
+		inventory.items[16] = null
+	if Settings.game_data.get("item17") != null:
+		var item = Settings.game_data.get("item17")
+		load_inventory(item, 17)
+	else:
+		inventory.items[17] = null
+	if Settings.game_data.get("item18") != null:
+		var item = Settings.game_data.get("item18")
+		load_inventory(item, 18)
+	else:
+		inventory.items[18] = null
+	if Settings.game_data.get("item19") != null:
+		var item = Settings.game_data.get("item19")
+		load_inventory(item, 19)
+	else:
+		inventory.items[19] = null
+	if Settings.game_data.get("item20") != null:
+		var item = Settings.game_data.get("item20")
+		load_inventory(item, 20)
+	else:
+		inventory.items[20] = null
+	if Settings.game_data.get("item21") != null:
+		var item = Settings.game_data.get("item21")
+		load_inventory(item, 21)
+	else:
+		inventory.items[21] = null
+	if Settings.game_data.get("item22") != null:
+		var item = Settings.game_data.get("item22")
+		load_inventory(item, 22)
+	else:
+		inventory.items[22] = null
+	if Settings.game_data.get("item23") != null:
+		var item = Settings.game_data.get("item23")
+		load_inventory(item, 23)
+	else:
+		inventory.items[23] = null
 	inventory.connect("items_changed", self, "_on_items_changed")
 	inventory.make_items_unique()
-	print(Settings.game_data.get("item0"))
-	print(inventory.items[0])
+	
 	update_inventory_display()
 
+func load_inventory(item, index):
+	if item == "Apple Pie":
+		inventory.items[index] = ApplePie
+	if item == "Apple":
+		inventory.items[index] = Apple
+	if item == "Carrot":
+		inventory.items[index] = Carrot
+	if item == "Chamomile":
+		inventory.items[index] = Chamomile
+	if item == "Essential Oil":
+		inventory.items[index] = EssentialOil
+	if item == "Green Tea":
+		inventory.items[index] = GreenTea
+	if item == "Iron Sword":
+		inventory.items[index] = IronSword
+	if item == "Mustard Plant":
+		inventory.items[index] = MustardPlant
+	if item == "Oak Branch":
+		inventory.items[index] = OakBranch
+	if item == "Poison Mushroom":
+		inventory.items[index] = PoisonMushroom
+	if item == "Shiitake Mushroom":
+		inventory.items[index] = ShiitakeMushroom
+	if item == "Stone Dagger":
+		inventory.items[index] = StoneDagger
+	if item == "Wooden Sword":
+		inventory.items[index] = WoodenSword
 
 func update_inventory_display():
 	for item_index in inventory.items.size():

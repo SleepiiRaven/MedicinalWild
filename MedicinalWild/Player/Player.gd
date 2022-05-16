@@ -45,19 +45,20 @@ onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $HurtBox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var InventoryContainer = get_parent().get_parent().get_node("CanvasLayer/InventoryContainer")
-onready var inventory_items_array = preload("res://UI/Inventory/Inventory.tres")
+onready var inventory = preload("res://UI/Inventory/Inventory.tres")
+onready var inventory_items_array = preload("res://UI/Inventory/Inventory.tres").items
 
 func _ready():
 	#connect to function
 	stats.connect("no_health", self, "die")
 	animationTree.active = true;
 	swordHitbox.knockback_vector = roll_vector
-	#global_position = Settings.game_data.get("position")
-	#stats.health = Settings.game_data.get("current_hp")
-	print(stats.health)
+	global_position = Settings.game_data.get("position")
+	stats.health = Settings.game_data.get("current_hp")
 
 #Runs every tick, delta scales for low fps people
 func _physics_process(delta):
+	
 	#its kinda like switch in gamemaker, you can just use if, elif, elif
 	match state:
 		MOVE:
@@ -120,37 +121,45 @@ func move_state(delta):
 			$PickupZone.items_in_range.erase(pickup_item)
 		
 	if Input.is_action_just_pressed("ui_cancel"):
+		on_items_changed()
 		Settings.game_data = {
-			"item0": inventory_items_array.items[0],
-			"item1": inventory_items_array.items[1],
-			"item2": inventory_items_array.items[2],
-			"item3": inventory_items_array.items[3],
-			"item4": inventory_items_array.items[4],
-			"item5": inventory_items_array.items[5],
-			"item6": inventory_items_array.items[6],
-			"item7": inventory_items_array.items[7],
-			"item8": inventory_items_array.items[8],
-			"item9": inventory_items_array.items[9],
-			"item10": inventory_items_array.items[10],
-			"item11": inventory_items_array.items[11],
-			"item12": inventory_items_array.items[12],
-			"item13": inventory_items_array.items[13],
-			"item14": inventory_items_array.items[14],
-			"item15": inventory_items_array.items[15],
-			"item16": inventory_items_array.items[16],
-			"item17": inventory_items_array.items[17],
-			"item18": inventory_items_array.items[18],
-			"item19": inventory_items_array.items[19],
-			"item20": inventory_items_array.items[20],
-			"item21": inventory_items_array.items[21],
-			"item22": inventory_items_array.items[22],
-			"item23": inventory_items_array.items[23],
+			"item0": check_name(0),
+			"item1": check_name(1),
+			"item2": check_name(2),
+			"item3": check_name(3),
+			"item4": check_name(4),
+			"item5": check_name(5),
+			"item6": check_name(6),
+			"item7": check_name(7),
+			"item8": check_name(8),
+			"item9": check_name(9),
+			"item10": check_name(10),
+			"item11": check_name(11),
+			"item12": check_name(12),
+			"item13": check_name(13),
+			"item14": check_name(14),
+			"item15": check_name(15),
+			"item16": check_name(16),
+			"item17": check_name(17),
+			"item18": check_name(18),
+			"item19": check_name(19),
+			"item20": check_name(20),
+			"item21": check_name(21),
+			"item22": check_name(22),
+			"item23": check_name(23),
 			"position": position,
 			"current_hp": stats.health
 		}
-		print(Settings.game_data)
+		print(check_name(0))
 		Settings.save_data()
 		
+
+func on_items_changed():
+	inventory_items_array = load("res://UI/Inventory/Inventory.tres").items
+
+func check_name(item_index):
+	if inventory_items_array[item_index] != null:
+		return inventory_items_array[item_index].name
 	
 #roll state
 func roll_state():
