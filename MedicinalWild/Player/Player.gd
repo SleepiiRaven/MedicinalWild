@@ -153,15 +153,42 @@ func move_state(delta):
 			"item21": check_name(21),
 			"item22": check_name(22),
 			"item23": check_name(23),
+			"item0amount": check_amount(0), 
+			"item1amount": check_amount(1), 
+			"item2amount": check_amount(2), 
+			"item3amount": check_amount(3), 
+			"item4amount": check_amount(4), 
+			"item5amount": check_amount(5), 
+			"item6amount": check_amount(6), 
+			"item7amount": check_amount(7), 
+			"item8amount": check_amount(8), 
+			"item9amount": check_amount(9), 
+			"item10amount": check_amount(10), 
+			"item11amount": check_amount(11), 
+			"item12amount": check_amount(12), 
+			"item13amount": check_amount(13), 
+			"item14amount": check_amount(14), 
+			"item15amount": check_amount(15), 
+			"item16amount": check_amount(16), 
+			"item17amount": check_amount(17), 
+			"item18amount": check_amount(18), 
+			"item19amount": check_amount(19), 
+			"item20amount": check_amount(20), 
+			"item21amount": check_amount(21), 
+			"item22amount": check_amount(22), 
+			"item23amount": check_amount(23),
 			"position": position,
 			"current_hp": stats.health
 		}
-		print(check_name(0))
 		Settings.save_data()
 		
 
 func on_items_changed():
 	inventory_items_array = load("res://UI/Inventory/Inventory.tres").items
+
+func check_amount(item_index):
+	if inventory_items_array[item_index] != null:
+		return inventory_items_array[item_index].amount
 
 func check_name(item_index):
 	if inventory_items_array[item_index] != null:

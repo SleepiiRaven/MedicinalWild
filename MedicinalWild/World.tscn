@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=170 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://World/SnowTileset.png" type="Texture" id=13]
 [ext_resource path="res://World/SandTileset.png" type="Texture" id=14]
 [ext_resource path="res://World/WaterTileset.png" type="Texture" id=15]
+[ext_resource path="res://UI/Inventory/ItemDrop.tscn" type="PackedScene" id=16]
 [ext_resource path="res://DayNightCycle.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=1]
@@ -2022,5 +2023,14 @@ visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource( 17 )
+
+[node name="ItemDrop" parent="." instance=ExtResource( 16 )]
+position = Vector2( 6, 68 )
+
+[node name="ItemDrop2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 17, 91 )
+
+[node name="ItemDrop3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 33, 52 )
 
 [editable path="CanvasLayer/FadeInRed"]

@@ -137,8 +137,67 @@ func _ready():
 		load_inventory(item, 23)
 	else:
 		inventory.items[23] = null
+		
+		
+	
+	if Settings.game_data.get("item0amount") != null:
+		inventory.items[0].amount = Settings.game_data.get("item0amount")
+	if Settings.game_data.get("item1amount") != null:
+		inventory.items[1].amount = Settings.game_data.get("item1amount")
+	if Settings.game_data.get("item2amount") != null:
+		inventory.items[2].amount = Settings.game_data.get("item2amount")
+	if Settings.game_data.get("item3amount") != null:
+		inventory.items[3].amount = Settings.game_data.get("item3amount")
+	if Settings.game_data.get("item4amount") != null:
+		inventory.items[4].amount = Settings.game_data.get("item4amount")
+	if Settings.game_data.get("item5amount") != null:
+		inventory.items[5].amount = Settings.game_data.get("item5amount")
+	if Settings.game_data.get("item6amount") != null:
+		inventory.items[6].amount = Settings.game_data.get("item6amount")
+	if Settings.game_data.get("item7amount") != null:
+		inventory.items[7].amount = Settings.game_data.get("item7amount")
+	if Settings.game_data.get("item8amount") != null:
+		inventory.items[8].amount = Settings.game_data.get("item8amount")
+	if Settings.game_data.get("item9amount") != null:
+		inventory.items[9].amount = Settings.game_data.get("item9amount")
+	if Settings.game_data.get("item10amount") != null:
+		inventory.items[10].amount = Settings.game_data.get("item10amount")
+	if Settings.game_data.get("item11amount") != null:
+		inventory.items[11].amount = Settings.game_data.get("item11amount")
+	if Settings.game_data.get("item12amount") != null:
+		inventory.items[12].amount = Settings.game_data.get("item12amount")
+	if Settings.game_data.get("item13amount") != null:
+		inventory.items[13].amount = Settings.game_data.get("item13amount")
+	if Settings.game_data.get("item14amount") != null:
+		inventory.items[14].amount = Settings.game_data.get("item14amount")
+	if Settings.game_data.get("item15amount") != null:
+		inventory.items[15].amount = Settings.game_data.get("item15amount")
+	if Settings.game_data.get("item16amount") != null:
+		inventory.items[16].amount = Settings.game_data.get("item16amount")
+	if Settings.game_data.get("item17amount") != null:
+		inventory.items[17].amount = Settings.game_data.get("item17amount")
+	if Settings.game_data.get("item18amount") != null:
+		inventory.items[18].amount = Settings.game_data.get("item18amount")
+	if Settings.game_data.get("item19amount") != null:
+		inventory.items[19].amount = Settings.game_data.get("item19amount")
+	if Settings.game_data.get("item20amount") != null:
+		inventory.items[20].amount = Settings.game_data.get("item20amount")
+	if Settings.game_data.get("item21amount") != null:
+		inventory.items[21].amount = Settings.game_data.get("item21amount")
+	if Settings.game_data.get("item22amount") != null:
+		inventory.items[22].amount = Settings.game_data.get("item22amount")
+	if Settings.game_data.get("item23amount") != null:
+		inventory.items[23].amount = Settings.game_data.get("item23amount")
+	print(Settings.game_data)
 	inventory.connect("items_changed", self, "_on_items_changed")
 	inventory.make_items_unique()
+
+	
+	
+	
+	
+	
+	
 	
 	update_inventory_display()
 
