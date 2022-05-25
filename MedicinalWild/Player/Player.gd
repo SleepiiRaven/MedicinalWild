@@ -182,6 +182,17 @@ func move_state(delta):
 		}
 		Settings.save_data()
 		
+func process(delta):
+	var fps = Engine.get_frames_per_second()
+	var lerp_interval = velocity/fps
+	var lerp_position = global_transform.origin + lerp_interval
+	
+	if fps > 60:
+		$Sprite.set_as_toplevel(true)
+		$Sprite.global_transform.origin = $Sprite.global_transform.origin.linear_interpolate(lerp_position, 20 * delta)
+	else:
+		$Sprite.global_transform = global_transform
+		$Sprite.set_as_toplevel(false)
 
 func on_items_changed():
 	inventory_items_array = load("res://UI/Inventory/Inventory.tres").items
